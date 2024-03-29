@@ -67,7 +67,6 @@
                   <HBox prefHeight="24.0" prefWidth="301.0" spacing="20.0">
                      <children>
                         <Button fx:id="btnSaveOrUpdate" defaultButton="true" mnemonicParsing="false" onAction="#btnSaveOrUpdateOnAction" text="Save" />
-                        <Button fx:id="btnDelete" mnemonicParsing="false" onAction="#btnDeleteOnAction" text="Delete" />
                      </children>
                   </HBox>
                </children>
@@ -193,5 +192,6 @@
             <TableColumn editable="false" prefWidth="121.0" sortable="false" text="Contact Status" />
         </columns>
       </TableView>
+      <Button fx:id="btnDelete" layoutX="641.0" layoutY="363.0" mnemonicParsing="false" onAction="#btnDeleteOnAction" text="Delete" />
    </children>
 </AnchorPane>

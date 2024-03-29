@@ -78,7 +78,7 @@ public class AddEmployeeViewController {
 
         //adding change listener to table
         tblEmployee.getSelectionModel().selectedItemProperty().addListener((observable, previous, current) -> {
-            btnDelete.setDisable(current == null);
+
             if (current != null) System.out.println(current.getContacts());
             if (current != null) {
                 Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Do you want to update the selected employee?", ButtonType.YES, ButtonType.NO);
@@ -104,6 +104,7 @@ public class AddEmployeeViewController {
                     btnDelete.setDisable(false);
                 }
             }
+            btnDelete.setDisable(current == null);
         });
 
     }
