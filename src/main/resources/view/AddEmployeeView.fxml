@@ -158,7 +158,7 @@
             </HBox>
             <HBox alignment="CENTER_RIGHT" layoutX="10.0" layoutY="53.0" prefHeight="29.0" prefWidth="96.0" spacing="5.0" GridPane.rowIndex="1">
                <children>
-                  <Label fx:id="lblNIC" accessibleText="#txtName" alignment="CENTER_RIGHT" mnemonicParsing="true" prefHeight="18.0" prefWidth="56.0" text="_NIC">
+                  <Label fx:id="lblNIC" accessibleText="#txtNIC" alignment="CENTER_RIGHT" mnemonicParsing="true" prefHeight="18.0" prefWidth="56.0" text="_NIC">
                      <font>
                         <Font size="14.0" />
                      </font>
