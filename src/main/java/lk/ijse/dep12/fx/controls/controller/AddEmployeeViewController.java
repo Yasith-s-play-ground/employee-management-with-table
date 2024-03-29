@@ -301,6 +301,11 @@ public class AddEmployeeViewController {
     public void btnDeleteOnAction(ActionEvent actionEvent) {
         employeeList.remove(tblEmployee.getSelectionModel().getSelectedItem());
         tblEmployee.getSelectionModel().clearSelection();
+
+        // generate employee id again if already was trying to enter a new employee while deleting existing one
+        if (!lblEmployeeId.getText().isEmpty()) {
+            lblEmployeeId.setText(generateEmployeeId());
+        }
     }
 
     public void rdButtonFemaleOnAction(ActionEvent actionEvent) {
