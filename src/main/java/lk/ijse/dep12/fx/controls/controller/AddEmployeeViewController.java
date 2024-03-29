@@ -145,6 +145,13 @@ public class AddEmployeeViewController {
         return true;
     }
 
+    private boolean existsNic(String nic) {
+        for (Employee employee : employeeList) {
+            if (employee.getNic().equals(nic)) return true;
+        }
+        return false;
+    }
+
     private boolean isNameValid() {
         String name = txtName.getText().strip();
         if (name.length() < 3) return false;
@@ -270,7 +277,7 @@ public class AddEmployeeViewController {
             txtName.requestFocus();
         }
 
-        if (!isNICValid()) {
+        if (!isNICValid() || existsNic(txtNIC.getText().strip())) {
             txtNIC.getStyleClass().add("error");
             lblNIC.getStyleClass().add("error");
             validation = false;
