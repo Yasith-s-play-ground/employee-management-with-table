@@ -97,11 +97,6 @@
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Label alignment="CENTER_RIGHT" prefHeight="18.0" prefWidth="6.0" text="*" textFill="RED">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Label>
                   <Label prefHeight="18.0" prefWidth="17.0" text=":">
                      <font>
                         <Font size="14.0" />

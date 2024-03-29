@@ -48,6 +48,7 @@ public class AddEmployeeViewController {
         mainGridPane.setDisable(true);
         btnNewEmployee.requestFocus();
         btnDelete.setDisable(true);
+        btnRemove.setDisable(true);
         employeeList = tblEmployee.getItems();
 
         tblEmployee.getColumns().get(0).setCellValueFactory(new PropertyValueFactory<>("id")); // set a new property value factory to cell value factory
@@ -157,12 +158,13 @@ public class AddEmployeeViewController {
 
     private boolean isAddressValid() {
         String address = txtAddress.getText();
-        return address.strip().length() >= 4;
+        return address.isEmpty() || address.strip().length() >= 4;
     }
 
     private boolean isContactNumberValid() {
         String contact = txtMainContact.getText().strip();
-        if (lstViewContact.getItems().contains(contact)) return false; // check whether number duplicated for same employee
+        if (lstViewContact.getItems().contains(contact))
+            return false; // check whether number duplicated for same employee
         if (contact.length() != 11) return false;
         if (contact.charAt(3) != '-') return false;
         for (int i = 0; i < contact.length(); i++) {
