@@ -224,14 +224,19 @@ public class AddEmployeeViewController {
 
     public void btnSaveOrUpdateOnAction(ActionEvent actionEvent) {
 
-        for (TextField textField : new TextField[]{txtName, txtAddress, txtNIC, txtMainContact}) {
-            textField.getStyleClass().remove("error");
-        }
-        for (Label label : new Label[]{lblNIC, lblName, lblAddress, lblContact, lblGender}) {
-            label.getStyleClass().remove("error");
-        }
-        for (RadioButton radioButton : new RadioButton[]{rdButtonMale, rdButtonFemale}) {
-            radioButton.getStyleClass().remove("error");
+//        for (TextField textField : new TextField[]{txtName, txtAddress, txtNIC, txtMainContact}) {
+//            textField.getStyleClass().remove("error");
+//        }
+//        for (Label label : new Label[]{lblNIC, lblName, lblAddress, lblContact, lblGender}) {
+//            label.getStyleClass().remove("error");
+//        }
+//        for (RadioButton radioButton : new RadioButton[]{rdButtonMale, rdButtonFemale}) {
+//            radioButton.getStyleClass().remove("error");
+//        }
+
+        // to remove error class from all components in the main grid pane in the beginning
+        for (Node node : mainGridPane.lookupAll(".error")) {
+            node.getStyleClass().remove("error");
         }
 
         boolean validation = true;
