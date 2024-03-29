@@ -218,7 +218,7 @@ public class AddEmployeeViewController {
 
     public void btnSaveOrUpdateOnAction(ActionEvent actionEvent) {
 
-        for (TextField textField : new TextField[]{txtName, txtAddress, txtNIC}) {
+        for (TextField textField : new TextField[]{txtName, txtAddress, txtNIC, txtMainContact}) {
             textField.getStyleClass().remove("error");
         }
         for (Label label : new Label[]{lblNIC, lblName, lblAddress, lblContact, lblGender}) {
@@ -229,6 +229,13 @@ public class AddEmployeeViewController {
         }
 
         boolean validation = true;
+
+        if (!txtMainContact.getText().isEmpty()) {
+            txtMainContact.getStyleClass().add("error");
+            lblContact.getStyleClass().add("error");
+            txtMainContact.requestFocus();
+            validation = false;
+        }
 
         if (rdBtnGroupGender.getSelectedToggle() == null) {
             rdButtonFemale.getStyleClass().add("error");
