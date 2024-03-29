@@ -48,7 +48,7 @@ public class AddEmployeeViewController {
         mainGridPane.setDisable(true);
         btnNewEmployee.requestFocus();
         btnDelete.setDisable(true);
-        btnRemove.setDisable(true);
+        btnRemove.setVisible(false);
         employeeList = tblEmployee.getItems();
 
         tblEmployee.getColumns().get(0).setCellValueFactory(new PropertyValueFactory<>("id")); // set a new property value factory to cell value factory
@@ -74,7 +74,7 @@ public class AddEmployeeViewController {
         //adding change listener to list view
         lstViewContact.getSelectionModel().selectedItemProperty().addListener((observable, previous, current) -> {
             btnRemove.setDisable(current == null);
-
+            btnRemove.setVisible(current != null);
         });
 
         //adding change listener to table
