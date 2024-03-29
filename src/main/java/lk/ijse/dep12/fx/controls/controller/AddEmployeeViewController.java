@@ -332,7 +332,7 @@ public class AddEmployeeViewController {
     }
 
     public void txtMainContactOnAction(ActionEvent actionEvent) {
-
+        btnAddAnotherContact.fire();
     }
 
     public void txtMainContactOnKeyReleased(KeyEvent keyEvent) {
