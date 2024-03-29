@@ -47,7 +47,7 @@ public class AddEmployeeViewController {
     public void initialize() {
         mainGridPane.setDisable(true);
         btnNewEmployee.requestFocus();
-
+        btnDelete.setDisable(true);
         employeeList = tblEmployee.getItems();
 
         tblEmployee.getColumns().get(0).setCellValueFactory(new PropertyValueFactory<>("id")); // set a new property value factory to cell value factory
@@ -162,6 +162,7 @@ public class AddEmployeeViewController {
 
     private boolean isContactNumberValid() {
         String contact = txtMainContact.getText().strip();
+        if (lstViewContact.getItems().contains(contact)) return false; // check whether number duplicated for same employee
         if (contact.length() != 11) return false;
         if (contact.charAt(3) != '-') return false;
         for (int i = 0; i < contact.length(); i++) {
@@ -285,15 +286,6 @@ public class AddEmployeeViewController {
 
         }
         employeeList.add(employee);
-//after adding to employee list
-//        System.out.println("after adding to the table for all employees");
-//        for (Employee employee1 : employeeList) {
-//            System.out.print("\n" + employee1.getFullName());
-//            for (String contact : employee1.getContacts()) {
-//                System.out.print(contact + " ");
-//            }
-//        }
-
         onceTriedToSave = false;
         btnSaveOrUpdate.setText("Save");
         clearTheForm();

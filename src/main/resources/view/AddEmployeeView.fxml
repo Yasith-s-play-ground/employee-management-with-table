@@ -16,7 +16,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="root" prefHeight="569.0" prefWidth="772.0" stylesheets="@../css/AddEmployeeView.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.dep12.fx.controls.controller.AddEmployeeViewController">
+<AnchorPane fx:id="root" prefHeight="569.0" prefWidth="772.0" style="-fx-background-color: white;" stylesheets="@../css/AddEmployeeView.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.dep12.fx.controls.controller.AddEmployeeViewController">
    <children>
       <GridPane fx:id="mainGridPane" layoutX="83.0" layoutY="37.0" prefHeight="361.0" prefWidth="497.0" AnchorPane.bottomAnchor="171.0" AnchorPane.leftAnchor="83.0" AnchorPane.rightAnchor="192.0" AnchorPane.topAnchor="37.0">
         <columnConstraints>
