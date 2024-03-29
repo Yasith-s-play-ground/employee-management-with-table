@@ -49,6 +49,7 @@ public class AddEmployeeViewController {
         btnNewEmployee.requestFocus();
         btnDelete.setDisable(true);
         btnRemove.setVisible(false);
+        btnRemove.setDisable(true);
         employeeList = tblEmployee.getItems();
 
         tblEmployee.getColumns().get(0).setCellValueFactory(new PropertyValueFactory<>("id")); // set a new property value factory to cell value factory
@@ -74,7 +75,6 @@ public class AddEmployeeViewController {
         //adding change listener to list view
         lstViewContact.getSelectionModel().selectedItemProperty().addListener((observable, previous, current) -> {
             btnRemove.setDisable(current == null);
-            btnRemove.setVisible(current != null);
         });
 
         //adding change listener to table
@@ -124,6 +124,7 @@ public class AddEmployeeViewController {
         btnAddAnotherContact.setDisable(true);
         btnDelete.setDisable(true);
         btnRemove.setDisable(true);
+        btnRemove.setVisible(false);
     }
 
     private String generateEmployeeId() {
@@ -218,6 +219,7 @@ public class AddEmployeeViewController {
     public void btnRemoveOnAction(ActionEvent actionEvent) {
         lstViewContact.getItems().remove(lstViewContact.getSelectionModel().getSelectedItem()); // remove selected item
         lstViewContact.getSelectionModel().clearSelection(); // clear remaining selection
+        btnRemove.setVisible(!lstViewContact.getItems().isEmpty());
     }
 
     public void btnSaveOrUpdateOnAction(ActionEvent actionEvent) {
@@ -312,6 +314,7 @@ public class AddEmployeeViewController {
         lblContact.getStyleClass().remove("error");
         if (isContactNumberValid()) {
             lstViewContact.getItems().add(txtMainContact.getText().strip());
+            btnRemove.setVisible(true);
             txtMainContact.clear();
         } else {
             txtMainContact.getStyleClass().add("error");
